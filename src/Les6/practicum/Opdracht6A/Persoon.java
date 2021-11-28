@@ -38,23 +38,6 @@ public class Persoon {
         return titel;
     }
 
-    public ArrayList<Game> gamesNietInBezit(ArrayList<Game> games){
-        ArrayList<Game> gamesNietInBezit = new ArrayList<>();
-        boolean bezit;
-        for (Game game : games){
-            bezit = false;
-            for(Game persoonGame : this.games){
-                if (persoonGame.equals(game)) {
-                    bezit = true;
-                    break;
-                }
-            }
-            if(!bezit){
-                gamesNietInBezit.add(game);
-            }
-        }
-        return gamesNietInBezit;
-    }
 
     public String toString(){
         String alles = naam + " heeft een budget van €" + String.format("%.2f", getBudget()) + " en bezit de volgende games:" ;
