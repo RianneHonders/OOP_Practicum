@@ -47,6 +47,15 @@ public class Persoon {
         return titel;
     }
 
+    public Game zoekGameOpNaam(String spel){
+        for(Game game : games){
+            if (game.getNaam().equals(spel)) {
+                return game;
+            }
+        }
+        return null;
+    }
+
 
     public String toString(){
         String alles = naam + " heeft een budget van €" + String.format("%.2f", getBudget()) + " en bezit de volgende games:" ;
