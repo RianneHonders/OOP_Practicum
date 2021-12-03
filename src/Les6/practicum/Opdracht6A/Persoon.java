@@ -27,6 +27,15 @@ public class Persoon {
         }
     }
 
+    public ArrayList<Game> bepaalGamesNietInBezit(ArrayList<Game> gameLijst){
+        for(Game g : gameLijst){
+            if (this.games.contains(g)){
+                gameLijst.remove(g);
+            }
+        }
+        return gameLijst;
+    }
+
     public boolean verkoop(Game g, Persoon koper){
         boolean titel = false;
         if (games.contains(g) && !koper.games.contains(g) && koper.budget >= g.huidigeWaarde()) {
